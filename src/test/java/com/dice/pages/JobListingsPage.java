@@ -12,6 +12,40 @@ public class JobListingsPage {
 	public JobListingsPage() {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
+	
+	
+	@FindBy(id = "7057f050bb3a5e541cf993a6ceb90f3e")
+	public WebElement jobTitle; 
+	
+	@FindBy(xpath = "/html/body/dhi-js-dice-client/div/dhi-search-page-container/dhi-search-page/div/dhi-search-page-results/div/div[3]/js-search-display/div/div[2]/dhi-search-cards-widget/div/dhi-search-card[1]/div/div[1]/div/div[2]/div[1]/h5/a")
+	public WebElement jobTitle2;
+	
+	@FindBy(className = "jobTitle")
+	public WebElement descriptionJobTitle;
+	
+	@FindBy(id ="applybtn-2")
+	public WebElement applyNowButton; 
+	
+	@FindBy(id = "easyapplyJob-log-in-btn")
+	public WebElement signInButton; 
+	
+	@FindBy(xpath = "/html/body/div[2]/div[9]/div/div[1]/div[7]/div[2]/div[1]/button")
+	public WebElement shareButton;
+	
+	@FindBy(className = "dropdown-menu pull-right")
+	public WebElement shareButton2;
+	
+	
+	
+	@FindBy(id = "emailBtn")
+	public WebElement emailButton; 
+	
+	@FindBy(className = "modal-title")
+	public WebElement emailThisJob;
+	
+	@FindBy (xpath = "//*[@id=\"bd\"]/div/div[2]/div[1]/div[3]/div")
+	public WebElement diceID;
+	
 
 	@FindBy(id = "betaURL")
 	public WebElement url;
