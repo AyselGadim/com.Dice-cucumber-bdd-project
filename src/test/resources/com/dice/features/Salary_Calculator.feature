@@ -17,7 +17,7 @@ Feature: I want to get on salary calculator page and test salary calculator func
      When I fill in information from examples table
      Then I verify if the Salary Calculator works properly
 
-    Examples: 
+  Examples: 
       | Job Title  | Location     | Years of Experience |Result          |
       | SDET       | Falls Church | 2                   |74,000 - 95,000 |
       | SDET       | Falls Church | 7                   |89,000 - 115,000|
