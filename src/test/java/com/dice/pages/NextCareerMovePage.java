@@ -13,6 +13,11 @@ public class NextCareerMovePage {
 		PageFactory.initElements(Driver.getDriver(), this);
 		
 		}
+			@FindBy(id = "navbarDropdown-3")
+			public WebElement careerExplorer; 
+			
+			@FindBy(xpath ="//div[@class='dropdown-menu show']//a[contains(@href, '/career-paths')]//span")
+			public WebElement careerPaths; 
 			
 			@FindBy (id = "search-field-keyword")
 			public WebElement CurrentJobTitle;
@@ -32,6 +37,11 @@ public class NextCareerMovePage {
 			public static void clickExploreCareerPathsBtn() {
 				NextCareerMovePage ncmp = new NextCareerMovePage();
 				ncmp.ExploreCareerPathsBtn.click();
+			}
+			
+			public static void clickCareerPaths() {
+				NextCareerMovePage ncmp = new NextCareerMovePage();
+				ncmp.careerPaths.click();
 			}
 			
 			

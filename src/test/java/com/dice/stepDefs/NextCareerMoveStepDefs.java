@@ -17,28 +17,43 @@ public class NextCareerMoveStepDefs {
 	NextCareerMovePage ncmp = new NextCareerMovePage();
 	
 
-@Given("I am on career path page")
+	
+@Given("I am home page ")
 public void i_am_on_career_path_page() {
-		Driver.getDriver().manage().timeouts().
-	   implicitlyWait(Long.parseLong(ConfigReader.getProperty("implicitWait")), TimeUnit.SECONDS);
-	   Driver.getDriver().manage().window().maximize();
-	   //Driver.getDriver().get(ConfigReader.getProperty("url10"));
-	   Driver.getDriver("https://www.dice.com/career-paths");
+			Driver.getDriver().manage().timeouts().
+		   implicitlyWait(Long.parseLong(ConfigReader.getProperty("implicitWait")), TimeUnit.SECONDS);
+		   Driver.getDriver().manage().window().maximize();
+		   Driver.getDriver().get(ConfigReader.getProperty("url10"));
+		   
+		  // Driver.getDriver("https://www.dice.com/career-paths");
+		  
+}
+
+@When("I click on career explorer")
+public void i_click_on_career_explorer() {
+    ncmp.careerExplorer.click();
+}
+
+@When("I click on career paths")
+public void i_click_on_career_paths() {
+	
+	ncmp.careerPaths.click();
+		
 }
 
 @When("I enter {string} to current job title field")
 public void i_enter_to_current_job_title_field(String string) {
-  ncmp.CurrentJobTitle.sendKeys(string);
+  ncmp.CurrentJobTitle.sendKeys("Sdet");
 }
 
 @And("I enter {string} to location field")
 public void i_enter_to_location_field(String string) {
-    ncmp.location.sendKeys(string);
+    ncmp.location.sendKeys("Arlington");
 }
 
 @And("I enter {string} to years of experience field")
 public void i_enter_to_years_of_experience_field(String string) {
-    ncmp.yearsOfExperience.sendKeys(string);
+    ncmp.yearsOfExperience.sendKeys("3");
 }
 
 @And("I click on explore career paths button")
@@ -51,5 +66,21 @@ public void i_should_land_on_your_next_career_move_page() {
 	String title = Driver.getDriver().getTitle();
 	Assert.assertEquals("How to Advance Your Career as a Sdet in Arlington | Dice.com" , title);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
