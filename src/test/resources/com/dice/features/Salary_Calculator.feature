@@ -1,29 +1,30 @@
-
-@tag
+ @search
 Feature: I want to get on salary calculator page and test salary calculator function
  
 
-  @tag1
+ 
   Scenario: Salary Calculator page
     Given I am on homepage
      When I click on Career Explorer
-      And I choose Salary Predicor
+      And I choose Salary Predictor
      Then I should land on Salary Calculator page
 
 
-  @tag2
-  Scenario Outline: Tesing Salary Calculator
-    Given I am on Salary Calculator page
-     When I fill in information from examples table
-     Then I verify if the Salary Calculator works properly
 
+  Scenario Outline: Testing Salary Calculator
+    Given I am on Salary Calculator page
+     When I add Salary Calculator Info
+     |Job Title | Location |Years of Experience|
+     |<jobtitle>|<location>|<yearsofexperience>|
+     Then I should get the '<Result>'
+     
   Examples: 
-      | Job Title  | Location     | Years of Experience |Result          |
-      | SDET       | Falls Church | 2                   |74,000 - 95,000 |
-      | SDET       | Falls Church | 7                   |89,000 - 115,000|
-      | SDET       |       Austin | 2                   |70,500 - 83,500 |
-      | SDET       |       Austin | 7                   |83,500 - 98,500 |
-      | Developer  | Falls Church | 2                   |51,500 - 72,500 |
-      | Developer  | Falls Church | 7                   |61,500 - 86,000 |
-      | Developer  |       Austin | 2                   |46,500 - 63,500 |
-      | Developer  |       Austin | 7                   |54,500 - 75,000 |
+      | jobtitle   | location     | yearsofexperience|Result         													 |
+      | SDET       | Falls Church | 2                |QA Automation Engineer Salary Prediction|
+      | SDET       | Falls Church | 7                |QA Automation Engineer Salary Prediction|
+      | SDET       |       Austin | 2                |QA Automation Engineer Salary Prediction|
+      | SDET       |       Austin | 7                |QA Automation Engineer Salary Prediction|
+      | Developer  | Falls Church | 2                |Developer Salary Prediction             |
+      | Developer  | Falls Church | 7                |Developer Salary Prediction             |
+      | Developer  |       Austin | 2                |Developer Salary Prediction 						|
+      | Developer  |       Austin | 7                |Developer Salary Prediction 						|

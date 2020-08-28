@@ -1,11 +1,13 @@
 Feature: Job Description feature
 
+@temp 
     Scenario: Verify job title
     
     Given I am on job listings page
     When I click on job title
     Then The job title should be correct on job description page
     
+@temp    
     Scenario: Verify Apply Now Button
     
     Given I am on job listings page
@@ -26,7 +28,7 @@ Feature: Job Description feature
     When I click on Share Button
     Then I should get Email option 
     
-    
+ @temp   
     Scenario: Verify Apply Now Button for clickability 
     
     Given I am on job description page
