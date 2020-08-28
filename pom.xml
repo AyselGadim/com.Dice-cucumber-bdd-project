@@ -115,6 +115,28 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+			<groupId>net.masterthought</groupId>
+			<artifactId>maven-cucumber-reporting</artifactId>
+			<version>5.0.0</version>
+			<executions>
+			<execution><id>execution</id>
+			<phase>verify</phase>
+			<goals>
+			<goal>generate</goal >
+			</goals>
+			<configuration>
+			<projectName>com.dice</projectName>
+			<!--output directory  for the  generated  report -->
+			<outputDirectory>${project.build.directory}/pretty-html-report</outputDirectory>
+			<!--optional,  defaults  to outputDirectoryif not specified -->
+			<inputDirectory>${project.build.directory}</inputDirectory><jsonFiles>
+			<!--supports wildcard  or name  pattern -->
+			<param>**/*.json </param>
+			</jsonFiles></configuration></execution></executions>
+			</plugin>
+			
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
